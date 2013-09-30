@@ -28,7 +28,9 @@ class testApp : public ofBaseApp{
     void onMessage( Spacebrew::Message & m );
     
     Dot pearl;
+    Dot stone;
     bool click;
+    bool clicktwo;
     
 
 };

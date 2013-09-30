@@ -16,23 +16,33 @@ void testApp::setup(){
     
     ofBackground(50);
     pearl.setup();
+    stone.setup();
     
     click=false;
+    clicktwo = false;
 
 
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    
 
 
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    //if (!click) {
+    if (!click) {
         pearl.display();
+    } else {
+        pearl.reset(mouseX, mouseY);
+    }
+    if (!clicktwo) {
+        stone.display();
+    } else {
+        stone.reset(mouseX, mouseY);
+    }
 
 }
 
@@ -65,15 +75,15 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-    pearl.reset(mouseX, mouseY);
-    click=true;
+    //pearl.reset(mouseX, mouseY);
+    clicktwo=true;
     spacebrew.sendBoolean("dot2dot", true);
     }
     
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-    click=false;
+    clicktwo=false;
     spacebrew.sendBoolean("dot2dot", false);
 }
 
