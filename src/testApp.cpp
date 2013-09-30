@@ -31,9 +31,9 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    if (!click) {
+    //if (!click) {
         pearl.display();
-    }
+
 }
 
 //--------------------------------------------------------------
@@ -73,7 +73,8 @@ void testApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-
+    click=false;
+    spacebrew.sendBoolean("dot2dot", false);
 }
 
 //--------------------------------------------------------------
